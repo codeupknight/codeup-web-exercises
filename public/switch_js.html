@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title>switch js</title>
+</head>
+<body>
+<script>
+
+var luckyNumber = Math.floor(Math.random()* 6)
+var bill = 60
+
+switch (luckyNumber) {
+  case 0:
+    var finalBill = bill;
+  case 1:
+    var finalBill = bill * .9
+  break;
+    case 2:
+    var finalBill = bill * .75
+  break;
+    case 3:
+    var finalBill = bill * .65
+  break;
+    case 4:
+    var finalBill = bill * .5
+  break;
+    case 5:
+    var finalBill = bill * 0
+  break;
+}
+
+console.log("Your inital bill was " + bill+ ", but your lucky number was " + luckyNumber + " so your final bill is " + finalBill)
+
+</script>
+</body>
+</html>

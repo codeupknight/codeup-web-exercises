@@ -4,8 +4,6 @@
   <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="gunmetal.css">
   <link rel="stylesheet" type="text/css" href="gunmetalcustom.css">
-  <script src="https://use.fontawesome.com/a2e2188a69.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<title>SA Local Music Week</title>
 </head>
 <body>
@@ -19,44 +17,81 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <h1>Local Music Week</h1>
+          <h2>#LMW2016</h2>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#top">Top</a></li>
-          <li><a href="#mid">Mid</a></li>
-          <li><a href="#bottom">Bottom</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="http://events.salocalmusicweek.com/">Calendar</a></li>
+          <li><a href="#partners">Partners</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  <div>
-    <div id="leftdiv-half">
-    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+  <div id="top-div">
+    <br>
+    <h1 class="white-text top-section">San Antonio</h1>
+    <h2 class="white-text">Local Music Week</h2><br>
+    <a href="http://events.salocalmusicweek.com/" class="btn btn-info">View Calendar</a><br>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 gunmetal-background">
+      <h2 class="white-text">
+        June 12 – 18
+      </h2>
+      <h3 class="white-text">
+        Local Music Week is a celebratory campaign to showcase San Antonio's rich and diverse local music community. By embracing all parts of the community, from the musicians, to the venues, the promoters, the fans, and everything in between, LMW calls attention to the fact that we all play a role in shaping the future of San Antonio’s local music community.
+        <br><br>
+        Ultimately, the intention is to continue the movement within our city to spotlight local music all year round. Cornerstone events include the Hot Dog Social Kick-Off on Sunday, June 12, and the San Antonio Music and Media Mixer on Wednesday, June 15.
+        <br><br>
+        Venues, artists, promoters, and partners are encouraged to host their own events during this week in order to capitalize on the earned media and collective advertising of the Local Music Week calendar. If you’d like to submit your event to the Local Music Week calendar please use the link below or email calendar.lmw@gmail.com!
+      </h3>
     </div>
-    <div id="rightdiv-half">
-    <h3>Title</h3>
+    <div class="col-sm-6 orange-background no-shadow">
+      <h2 class="white-text">Right Div Half</h2>
+        <br><br><br><br><br>
+    </div>
+      <div class="col-sm-6 yellow-background">
+        <div>
+          <a href="photos/LMW2016_weblogo.png" download="photos/LMW2016_weblogo.png">
+          <h2 class="white-text">Join the Movement!</h2>
+          <br><img class="logo-download" src="photos/LMW2016_weblogo.png">
+          <br><h4>Click here to download the logo for your media!</h4></a>
+        </div>
+      </div>
+  </div>
+</div>
+  <div class="col-sm-12 partners-bg">
+    <h1 class="gunmetal-text">LMW 2016 Partners</h1>
+    <div class="col-sm-4">
+      <img src="photos/do210.png" class="partners-img">
+    </div>
+    <div class="col-sm-4">
+      <img src="photos/imagine.png" class="partners-img">
+    </div>
+    <div class="col-sm-4">
+      <img src="photos/SASG.png" class="partners-img">
+    </div>
+    <div class="col-sm-4">
+      <img src="photos/krtu.png" class="partners-img">
+    </div>
+    <div class="col-sm-4">
+      <img src="photos/samusic.png" class="partners-img">
+    </div>
+    <div class="col-sm-4">
+      <img src="photos/SALMGuild.png" class="partners-img">
+    </div>
+    <div class="col-sm-4">
+      <img src="photos/zach-logo.png" class="partners-img">
+    </div>
+    <div class="col-sm-4">
+      <img src="photos/sv-logo.png" class="partners-img">
+    </div>
+      <div class="col-sm-4">
+      <img src="photos/Out-In-Sa.jpg" class="partners-img">
     </div>
   </div>
-
-  <script src="gunmetal.js"> </script>
+</div>
+    <div class="col-sm-12">
+      <h5 class="white-text no-shadow">Copyright 2016, All Rights Reserved. Web Design by Eddie Knight.</h5>
+    </div>
 </body>

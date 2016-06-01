@@ -1,28 +1,3 @@
-*,
-html,
-body,
-div,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6  {
-    font-family: "Abel";
-}
-h3,
-h4,
-h5,
-h6 {
-    color: #2e3338;
-    text-align: center;
-}
 body {
     padding-top: 70px;
     background-color: #36d6f3;
@@ -56,36 +31,81 @@ nav {
 .navbar-right {
     padding-top:7px;
 }
-#leftdiv-half { 
-    margin: 0; padding: 0;
-    position: absolute; left: 0;
-    width: 50%; 
-    background-color: #ffcb4c;
-}
-
-#leftdiv-half > h3 {
-
-    padding-top:20px; 
-    padding-bottom:20px;
-    padding-left: 50px;
-    padding-right: 50px;
-}
-       
-#rightdiv-half { 
-    margin: 0; padding: 0;
-    position: absolute; right: 0;
-    width: 50%; 
-    background-color: #f35e41;
-}
-
-#rightdiv-half > h3 {
-
-    padding-top:20px; 
-    padding-bottom:20px;
-    padding-left: 50px;
-    padding-right: 50px;
-}
 .navbar.scrolled {
     background: rgb(68, 68, 68); //IE
     background: rgba(0, 0, 0, 0.78); //NON-IE
+}
+*,
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6  {
+    font-family: "Abel";
+    text-align: center;
+}
+#top-div {
+    background-image: url(photos/cropped-guitar.jpg);
+    background-size: cover;
+    padding-top:25px;
+    padding-bottom:25px;
+    text-align: center;
+}
+.gunmetal-text {
+    color: #2e3338;
+    text-align: center;
+    text-shadow: 0
+}
+.white-text {
+    color: #F5F5F5;
+    text-align: center;
+}
+.no-shadow {
+    text-shadow: none !important;
+}
+.col-sm-6 {
+    padding-top:20px; 
+    padding-bottom:20px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.yellow-background {
+    background-color: #ffcb4c;
+}
+.orange-background {
+    background-color: #f35e41;
+}
+.gunmetal-background {
+    background-color: #2e3338;
+}
+.event-listing {
+    background-image: url(src="photos/lmw-calendar-add.png");
+}
+.logo-download {
+    background-image: url(src="photos/LMW2016_weblogo.png");
+    width: 50%;
+    margin-left:25%;
+    margin-right: 25%;
+}
+.partners-bg {
+    background-image: url(photos/833.jpg);
+    background-size: cover;
+    padding-top: 25px;
+    padding-bottom: 50px;
+}
+.partners-img {
+    width:75%;
+}
+.col-sm-4 {
+    padding:10px;
 }
