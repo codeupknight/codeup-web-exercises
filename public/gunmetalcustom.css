@@ -1,10 +1,91 @@
+*,
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6  {
+    font-family: "Abel";
+}
+h3,
+h4,
+h5,
+h6 {
+    color: #2e3338;
+    text-align: center;
+}
+body {
+    padding-top: 70px;
+    background-color: #36d6f3;
+}
+nav {
+    margin-bottom: 0px;
+}
+.container-fluid, 
+.navbar-collapse, 
+.collapse, 
+.navbar-header, 
+.bs-example-navbar-collapse-1 {
+    margin-bottom: 0px    
+}
+.nav, 
+.navbar-nav, 
+.navbar-right {
+    margin-bottom: 0px  
+}
 .navbar-brand {
-	float: left;
-	padding: 15px 15px;
-	font-size: 18px;
-	line-height: 20px;
-	height: 100px;
-	}
+    float: left;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    height: 70px;
+    }
 .navbar-brand > img {
-  display: block;
-  max-height: 100%;
+    display: block;
+    max-height: 100%;
+    }
+.navbar-right {
+    padding-top:7px;
+}
+#leftdiv-half { 
+    margin: 0; padding: 0;
+    position: absolute; left: 0;
+    width: 50%; 
+    background-color: #ffcb4c;
+}
+
+#leftdiv-half > h3 {
+
+    padding-top:20px; 
+    padding-bottom:20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+       
+#rightdiv-half { 
+    margin: 0; padding: 0;
+    position: absolute; right: 0;
+    width: 50%; 
+    background-color: #f35e41;
+}
+
+#rightdiv-half > h3 {
+
+    padding-top:20px; 
+    padding-bottom:20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.navbar.scrolled {
+    background: rgb(68, 68, 68); //IE
+    background: rgba(0, 0, 0, 0.78); //NON-IE
+}
