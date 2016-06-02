@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head profile="http://www.w3.org/2005/10/profile">
   <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="gunmetal.css">
   <link rel="stylesheet" type="text/css" href="gunmetalcustom.css">
 	<title>SA Local Music Week</title>
+  <link rel="icon" 
+      type="image/png" 
+      href="http://example.com/myicon.png">
 </head>
 <body>
   <nav class="navbar navbar-fixed-top">
@@ -14,7 +17,6 @@
         </button>
         <a href="#"><img class="navbar-brand" src="photos/LMW2016_weblogo.png"></a>
       </div>
-
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <h2>#LMW2016</h2>
@@ -46,21 +48,21 @@
         Venues, artists, promoters, and partners are encouraged to host their own events during this week in order to capitalize on the earned media and collective advertising of the Local Music Week calendar. If you’d like to submit your event to the Local Music Week calendar please use the link below or email calendar.lmw@gmail.com!
       </h3>
     </div>
-    <div class="col-sm-6 orange-background no-shadow">
-      <h2 class="white-text">Right Div Half</h2>
-        <br><br><br><br><br>
-    </div>
-      <div class="col-sm-6 yellow-background">
-        <div>
-          <a href="photos/LMW2016_weblogo.png" download="photos/LMW2016_weblogo.png">
-          <h2 class="white-text">Join the Movement!</h2>
-          <br><img class="logo-download" src="photos/LMW2016_weblogo.png">
-          <br><h4>Click here to download the logo for your media!</h4></a>
-        </div>
+    <div class="col-sm-6 yellow-background">
+      <div>
+        <a href="photos/LMW2016_weblogo.png" download="photos/LMW2016_weblogo.png">
+        <h2 class="white-text">Join the Movement!</h2>
+        <br><img class="logo-download" src="photos/LMW2016_weblogo.png">
+        <br><h4>Click here to download the logo for your media!</h4></a>
       </div>
+    </div>
+    <div class="col-sm-6 no-padding">
+        <a href="http://do210.com/p/creating-a-new-event-listing-on-do210-for-local-music-week"><img class="calendar-img" src="photos/lmw-calendar-add.png">
+        </a>
+    </div>
   </div>
 </div>
-  <div class="col-sm-12 partners-bg">
+  <div class="col-sm-12 partners-bg" id="partners">
     <h1 class="gunmetal-text">LMW 2016 Partners</h1>
     <div class="col-sm-4">
       <img src="photos/do210.png" class="partners-img">
@@ -89,9 +91,12 @@
       <div class="col-sm-4">
       <img src="photos/Out-In-Sa.jpg" class="partners-img">
     </div>
+      <div class="col-sm-4">
+      <img src="photos/sacurrent.png" class="partners-img">
+    </div>
   </div>
 </div>
     <div class="col-sm-12">
-      <h5 class="white-text no-shadow">Copyright 2016, All Rights Reserved. Web Design by Eddie Knight.</h5>
+      <h5 class="white-text no-shadow">Copyright 2016, All Rights Reserved. Web Design & Development by Eddie Knight.</h5>
     </div>
 </body>
