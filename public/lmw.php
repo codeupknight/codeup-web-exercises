@@ -99,7 +99,7 @@
   </div>
 </div>
     <div class="col-sm-12">
-      <h5 class="white-text no-shadow">Copyright 2016, All Rights Reserved. Web Design & Development by Eddie Knight.</h5>
+      <h5 class="white-text no-shadow">Copyright 2016, All Rights Reserved. Web Design and Development by Eddie Knight.</h5>
     </div>
 </body>
 </html>
