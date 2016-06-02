@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head profile="http://www.w3.org/2005/10/profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="gunmetal.css">
   <link rel="stylesheet" type="text/css" href="gunmetalcustom.css">
@@ -41,11 +43,11 @@
         June 12 – 18
       </h2>
       <h3 class="white-text">
-        Local Music Week is a celebratory campaign to showcase San Antonio's rich and diverse local music community. By embracing all parts of the community, from the musicians, to the venues, the promoters, the fans, and everything in between, LMW calls attention to the fact that we all play a role in shaping the future of San Antonio’s local music community.
+        Local Music Week is a celebratory campaign to showcase San Antonio\'s rich and diverse local music community. By embracing all parts of the community, from the musicians, to the venues, the promoters, the fans, and everything in between, LMW calls attention to the fact that we all play a role in shaping the future of San Antonio’s local music community.
         <br><br>
         Ultimately, the intention is to continue the movement within our city to spotlight local music all year round. Cornerstone events include the Hot Dog Social Kick-Off on Sunday, June 12, and the San Antonio Music and Media Mixer on Wednesday, June 15.
         <br><br>
-        Venues, artists, promoters, and partners are encouraged to host their own events during this week in order to capitalize on the earned media and collective advertising of the Local Music Week calendar. If you’d like to submit your event to the Local Music Week calendar please use the link below or email calendar.lmw@gmail.com!
+        Venues, artists, promoters, and partners are encouraged to host their own events during this week in order to capitalize on the earned media and collective advertising of the Local Music Week calendar. If you\’d like to submit your event to the Local Music Week calendar please use the link below or email calendar.lmw@gmail.com!
       </h3>
     </div>
     <div class="col-sm-6 yellow-background">
@@ -100,3 +102,4 @@
       <h5 class="white-text no-shadow">Copyright 2016, All Rights Reserved. Web Design & Development by Eddie Knight.</h5>
     </div>
 </body>
+</html>

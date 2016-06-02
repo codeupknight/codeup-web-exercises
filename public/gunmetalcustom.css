@@ -97,6 +97,7 @@ h6,
 }
 .partners-bg {
     background-image: url(photos/833.jpg);
+    background-size: fill;
     padding-top: 25px;
     padding-bottom: 50px;
 }
