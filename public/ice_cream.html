@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title> Selling Ice Cream
+	</title>
+</head>
+<body>
+	<script>
+	var conesLeft = Math.floor(Math.random() * 50) + 50;
+
+	console.log("I will go home after I sell " + conesLeft + " ice cream cones!");
+
+	do {
+		var cones = Math.floor(Math.random() * 5) + 1;
+		if (cones > conesLeft) {
+			cones = conesLeft
+		}
+		conesLeft = conesLeft - cones;
+		console.log("I sold " + cones + ", and have " + conesLeft + " left to sell!");
+	} while (conesLeft > 0)
+	</script>
+</body>
+</html>
