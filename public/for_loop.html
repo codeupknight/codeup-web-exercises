@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title> for loop</title>
+</head>
+<body>
+<script>
+
+//problem 1
+
+for (var i = 0; i < 10; i++) {
+	var str = ""
+	for (var j = 1; j <= i; j++) {
+		str = str + i
+	}
+	console.log(str)
+}
+console.log("0000000000")
+	//i need a string that can be populated with i
+	//then i need to multiply that string by i, causing it to repeat i times
+
+
+
+//problem 2
+var random = Math.floor((Math.random() * 10) + 1);
+for (var i = 1; i <= 10; i++) {
+	console.log(random + "x" + i + "=" + (random * i))
+}
+
+
+</script>
+</body>
+</html>
