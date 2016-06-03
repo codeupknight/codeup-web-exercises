@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title> break continue</title>
+</head>
+<body>
+	<script>
+		var x = Math.floor((Math.random()*50)+1);
+
+		while (x % 2 === 0) {
+			x = Math.floor((Math.random()*50)+1);
+			console.log("rawrrrrrrr")
+		}
+
+		console.log("Unlucky Number: " + x);
+
+		for (var i = 1; i <= 50; i++) {
+			if (i % 2 === 0) {
+				continue;
+			}
+			if (i === x) {
+				console.log("Skipping " + i);
+			} else {
+				console.log("Counting... " + i);
+			}
+			if (i >= 49) {
+				break;
+			}
+		}
+	</script>
+</body>
+</html>

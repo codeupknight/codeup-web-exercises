@@ -1,0 +1,77 @@
+<html>
+<head><title> counting</title>
+</head>
+<body>
+<script>
+var a = 0;
+var b = 0;
+var c = 0;
+var d = 0;
+var e = 0;
+var f = 0;
+for (i = 1; i <= 100; i++) {
+    var luckyNumber = Math.floor(Math.random()* 6);
+    if (luckyNumber === 0) {
+    	a++
+    } else if (luckyNumber === 1) {
+    	b++
+    } else if (luckyNumber === 2) {
+    	c++
+    } else if (luckyNumber === 3) {
+    	d++
+    } else if (luckyNumber === 4) {
+    	e++
+    } else if (luckyNumber === 5) {
+    	f++
+    }
+}
+console.log("0 repeated " + a + " times.");
+console.log("1 repeated " + b + " times.");
+console.log("2 repeated " + c + " times.");
+console.log("3 repeated " + d + " times.");
+console.log("4 repeated " + e + " times.");
+console.log("5 repeated " + f + " times.");
+console.log(a + b + c + d + e + f)
+
+console.log("New Rolling Style...");
+
+var z = 0;
+var y = 0;
+var x = 0;
+var w = 0;
+var v = 0;
+var u = 0;
+for (t = 1; t <= 100; t++) {
+    var luckyNumber2 = Math.floor(Math.random()* 6);
+    switch (luckyNumber2) {
+    	case 0:
+	    	z++;
+	    	break;
+    	case 1:
+	    	y++
+	    	break;
+    	case 2:
+    		x++
+    		break;
+    	case 3:
+    		w++
+    		break;
+    	case 4:
+    		v++
+    		break;
+    	case 5:
+    		u++
+    		break;
+    }
+}
+
+console.log("0 repeated " + z + " times.");
+console.log("1 repeated " + y + " times.");
+console.log("2 repeated " + x + " times.");
+console.log("3 repeated " + w + " times.");
+console.log("4 repeated " + v + " times.");
+console.log("5 repeated " + u + " times.");
+console.log(z + y + x + w + v +u)
+</script>
+</body>
+</html>

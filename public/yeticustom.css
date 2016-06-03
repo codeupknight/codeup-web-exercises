@@ -4,6 +4,9 @@
 .top-margin {
 	margin-top: 15%;
 }
+.top-margin-sm {
+	margin-top: 15px;
+}
 .col-centered {
     display:inline-block;
     float:none;
