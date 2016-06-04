@@ -15,8 +15,6 @@
   <nav class="navbar navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        </button>
         <a href="#"><img class="navbar-brand" src="photos/LMW2016_weblogo.png"></a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
