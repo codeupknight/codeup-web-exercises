@@ -19,29 +19,26 @@
     margin-bottom: 0;
 	z-index: 5;
 }
+.navbar-fixed-top {
+	height:100px;
+}
 .container {
 	padding: 0px;
 	margin: 0px;
 	margin-top: 0px;
 	padding-top: 0px;
 }
-.carousel-inner {
-float: both;
-}
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  width: 100%;
-  margin: 0px;
-}
 .sm-logo {
 	height:50px;
 	padding-top: 5px
 	}
-.slider {
-	position:fixed; top:0px;
-	z-index: -1;
+.white-text {
+    color: #F5F5F5;
+    text-align: center;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 3);
 }
-.slider-text {
+.title-text {
+	margin-top: 100px;
 	font-size: 3em;
     line-height: 150%;
 }
@@ -55,16 +52,4 @@ float: both;
     text-align:left;
     /* inline-block space fix */
     margin-right:-4px;
-}
-.top-bg {
-    background-image: url(/photos/custom-images/kek03.jpg);
-    background-size: cover;
-    margin-top:0;
-    padding: 100px 25px 25px 25px;
-}
-body {
-    background-color: #272b30;
-    color: #F5F5F5;
-    text-align: center;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 3);
 }
