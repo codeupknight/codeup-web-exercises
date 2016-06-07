@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>circle</title>
+</head>
+<body>
+    <script>
+
+    "use strict";
+
+    (function() {
+
+    // create a circle object
+        var circle = {
+            radius: 3,
+
+            getArea: function () {
+                var areaVar = Math.PI * (this.radius * this.radius);
+                return areaVar;
+            },
+
+            logInfo: function (doRounding) {
+                var roundedArea = this.getArea()
+                if (doRounding) {
+                    roundedArea = Math.round(this.getArea());
+                }
+                console.log("Area of a circle with radius of " + this.radius + ", is: " + roundedArea);
+            }
+        };
+
+        // log info about the circle
+        console.log("Raw circle information");
+        circle.logInfo(false);
+        console.log("Circle information rounded to the nearest whole number");
+        circle.logInfo(true);
+
+        console.log("=======================================================");
+        // TODO: Change the radius of the circle to 5.
+        circle.radius = 5;
+        // log info about the circle
+        console.log("Raw circle information");
+        circle.logInfo(false);
+        console.log("Circle information rounded to the nearest whole number");
+        circle.logInfo(true);
+    })();
+
+
+
+</script>
+</body>
+</html>

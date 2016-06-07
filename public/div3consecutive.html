@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>div3</title>
+</head>
+<body>
+<script>
+var divThree = [];
+var randomArray = [];
+var random = Math.floor(Math.random()*1000);
+document.write("<b>" + random + "</b><br>")
+function ranPop() {
+	for (var i = random; i < random + 20; i++) {
+		randomArray.push(i);
+	}
+}
+ranPop();
+document.write(randomArray + "<br>");
+for (var i = randomArray[0]; i <= randomArray[19]; i++) {
+	if (i % 3 === 0) {
+		divThree.push(i);
+	}
+}
+document.write(divThree);
+</script>
+</body>
+</html>

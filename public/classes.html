@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>classes</title>
+</head>
+<body>
+<script>
+var nameVar = prompt("What is your name?");
+var student = {
+	studentName : nameVar,
+	grades : [],
+	gradeAverage : function () {
+	var gradesTotal = 0
+	for (i = 0; i < this.grades.length; i++) {
+		gradesTotal += Number(this.grades[i].grade);
+	}
+	var gradeAv = gradesTotal / this.grades.length;
+	return Math.floor(gradeAv);
+},
+}
+do {
+	subjectName = prompt("What subject is this?");
+	grade = prompt("What is your class grade?");
+
+	var subject = {
+		name: subjectName,
+		grade: grade
+	};
+
+	student.grades.push(subject);
+	gradesAgain = confirm("Enter another class grade?");
+} while (gradesAgain == true);
+
+
+
+</script>
+</body>
+</html>

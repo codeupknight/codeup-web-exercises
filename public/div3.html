@@ -1,37 +1,24 @@
 <html>
 <head>
-	<title>div3</title>
+	<title>div3 challenge</title>
 </head>
 <body>
 <script>
-
-function divisibleFunction() {
-var divisibleArray = ['Numbers Divisible by 3: '];
-	for (var i = 0; i < 100; i++) {
-		if (i%3 === 0) {
-		divisibleArray.push(i);
-		}
-	return divisibleArray;
+var divThree = [];
+var ranArr = [];
+(function ranPop() {
+	for (var i = 1; i <= 20; i++) {
+		var random = Math.floor(Math.random()*1000);
+		ranArr.push(random);
 	}
-console.log(divisibleFunction()
-
-
-//Cameron's solution
-(function divisibleByThree(numbersArray) {
-	var divisibleByThree = [];
-	numbersArray.forEach(function(number) {
-		if (number % 3 === 0) {
-			divisisibleByThree.push(number);
-		}
-	});
-	return divisibleByThreeArray;
+})();
+document.write("Here are 20 random numbers: <br>" + ranArr + ".<br>");
+for (var i = 0, len = ranArr.length; i <= len; i++) {
+	if (ranArr[i] % 3 === 0) {
+		divThree.push(ranArr[i]);
+	}
 }
-var numbers = [87, 12, 64, 24, 65, 87, 23, 23]
-console.log(divisibleByThree(numbers)
-	));
-
-
-
+document.write("<br>These are the numbers divisible by 3: <br>" + divThree + ".");
 </script>
 </body>
 </html>

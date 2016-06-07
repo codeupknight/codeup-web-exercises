@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Challenge</title>
+	</head>
+<body>
+<script>
+	var array = [];
+	var finalArray = [];
+​
+	for (var i = 0; i < 20; i++) {
+		array[i]= Math.floor(Math.random() * (30) + 1);
+	} 
+​
+	console.log("Initial Array:");
+	console.log(array);
+​
+	function threes(numbers) {
+		for (i = 0; i < 25; i++) {
+			if (numbers[i] % 3 == 0) {
+				finalArray.push(numbers[i]);
+			}
+		}
+	console.log("The following are multiples of three from the initial array:");
+	console.log(finalArray);
+	}
+​
+	threes(array);
+</script>
+</body>
+</html>

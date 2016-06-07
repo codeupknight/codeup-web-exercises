@@ -1,0 +1,86 @@
+<html>
+<head>
+	<title>classes</title>
+</head>
+<body>
+		<center><br><br><br>
+<script>
+var array = []
+
+//customer profile object
+var customer = {
+	customerName : [],
+	purchases : [],
+	subtotal : [],
+	finalPrice : [],
+	//customer discount
+	subtotalPrice : function () {
+		for (i = 0; i < this.purchases.length; i++) {
+			var subtotal = subtotal + this.purchases[i].price;
+			return Number(subtotal);
+		}
+	},
+	totalPrice : function () {
+		if (this.subtotal >= 200) {
+			var finalPrice = (this.subtotal * .85);
+			return Number(finalPrice);
+		}
+	}
+};
+
+//purchases object
+var itemPurchased = {
+	itemName: [],
+	itemPrice: [],
+	numPurchased: [],
+	//dicounts 2 or mor items, and multiplies based on #
+	numItemDiscount : function () {
+		if (this.numPurchased > 1) {
+			this.price = (this.price * .7) * this.numPurchased;
+		}
+	}
+}
+
+
+
+//push customer to array
+do {
+	var customerName = prompt("What\'s your name?");
+	customer.customerName.push(customerName);
+	do {
+		
+		var itemName = prompt("Place item on the scanner...");
+		itemPurchased.itemName.push(itemName);
+		//Populated itemName
+		var itemPrice = prompt("Enter price for " + itemName);
+		itemPurchased.itemPrice.push(Number(itemPrice));
+		//Populated itemPrice
+		var itemNumber = prompt("Enter the number of this item that you would like to ring up.");
+		itemPurchased.numPurchased.push(Number(itemNumber));
+		//Populated numPurchased
+
+		itemPurchased.numItemDiscount();
+		//Ran numItemDiscount function
+
+		customer.purchases.push(itemPurchased);
+		//Pushed to customer array
+
+		var confirmMore = confirm('Scan another item?');
+
+	} while (confirmMore === true);
+	//Begins loop again for more items
+
+	customer.subtotalPrice();
+	//Ran subtotalPrice function to create subtotal
+
+	array.push(customer);
+
+	customer.totalPrice();
+	var confirmMoreCustomers = confirm("Is there anyone else in your party?")
+} while (confirmMoreCustomers === true);
+
+
+
+</script>
+</body>
+</html>
