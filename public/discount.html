@@ -8,11 +8,11 @@
 var array = []
 
 //customer profile object
-var customer = {
-	customerName : [],
-	purchases : [],
-	subtotal : [],
-	finalPrice : [],
+//var customer = {
+//	customerName : [],
+//	purchases : [],
+//	subtotal : [],
+//	finalPrice : [],
 	//customer discount
 	subtotalPrice : function () {
 		for (i = 0; i < this.purchases.length; i++) {
@@ -29,10 +29,10 @@ var customer = {
 };
 
 //purchases object
-var itemPurchased = {
-	itemName: [],
-	itemPrice: [],
-	numPurchased: [],
+function collectItemsPurchased(itemEntry, itemPrice, numberItems) var itemPurchased = {
+	itemName: [itemEntry],
+	itemPrice: [itemPrice],
+	numPurchased: [numberItems],
 	//dicounts 2 or mor items, and multiplies based on #
 	numItemDiscount : function () {
 		if (this.numPurchased > 1) {
