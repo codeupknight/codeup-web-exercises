@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Image Slider</title>
+</head>
+<body>
+    <br><center><h1>Bill Murray Loves Kitties</h1>
+    <img id="slider" src="https://placekitten.com/500/500"></center>
+<script>
+    "use strict";
+    var i = 0;
+    var delay = 1000;
+    var sliderImage = document.getElementById('slider');
+    var sliderArray = ["https://placekitten.com/500/500", "https://fillmurray.com/490/490", "https://placekitten.com/480/480", "https://fillmurray.com/470/470"];
+
+    var interval = setInterval(function updateSlider() {
+        if (i == sliderArray.length) {
+            i = 0;
+        } 
+        sliderImage.setAttribute("src", sliderArray[i]);
+        i++;
+    }, delay);
+
+    </script>
+</body>
+</html>

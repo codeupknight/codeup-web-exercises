@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Programming books books</title>
+</head>
+<body>
+    <h1>See your friend's books</h1>
+    <form>
+        <label for="friend">Choose</label>
+        <select id="friend" name="friend">
+            <option value="">Friend</option>
+        </select>
+        <input type="button" value="Search">
+    </form>
+    <div id="books"></div>
+    <script>
+        var friends = [
+            {name: 'Oliver Queen', books: ['Arrow', 'The Green Arrow (Comic)']},
+            {name: 'Barry Allen', books: ['Working effectively with unit tests', '50 quick ideas for your tests']},
+            {name: 'Jessica Jones', books: ['Understanding the 4 rules of simple design', 'Principles of package design']},
+            {name: 'Clark Kent', books: ['Selling test driven projects']}
+        ];
+        var friendSelect = document.getElementById('friend');
+        var friendName;
+        friends.forEach(function (friend, i) {
+            friendName += '<option value="' + i + '">' + friend.name + '</option>';
+        });
+        friendSelect.innerHTML += friendName;
+
+    </script>
+</body>
+</html>
