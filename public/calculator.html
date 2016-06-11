@@ -2,42 +2,89 @@
 <html lang="en">
 <head>
     <title>Calculator</title>
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous"
+    >
 </head>
 <body>
-    <table id="table">
-        <thead>
-            <tr>
-                <th id= "leftOutput"></th>
-                <th id= "centerOutput"></th>
-                <th id= "rightOutput"></th>
-            </tr>
-        </thead>
-        <tbody id="grades">
-            <tr>
-                <td class="numberButton"></td>
-                <td class="numberButton"></td>
-                <td class="numberButton"></td>
-                <td class="addButton"></td>
-            </tr>
-            <tr>
-                <td class="numberButton"></td>
-                <td class="numberButton"></td>
-                <td class="numberButton"></td>
-                <td class="subtractButton"></td>
-            </tr>
-                <td class="numberButton"></td>
-                <td class="numberButton"></td>
-                <td class="numberButton"></td>
-                <td class="addButton"></td>
-            </tr>
-            <tr>
-                <td class="clearButton"></td>
-                <td class="numberButton"></td>
-                <td class="equalButton"></td>
-                <td class="divideButton"></td>
-            </tr>            
-        </tbody>
-    </table>
+<article class="container">
+    <header class="page-header">
+        <h1>This will eventually be a calculator.<br>
+        <small>Right now it's ugly af.</small></h1>
+    </header>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-3">
+                <table id="table">
+                    <thead>
+                        <tr><input type="text" class="form-control" id="display" placeholder="0" readonly>
+                        </tr>
+                    </thead>
+                    <tbody id="grades">
+                        <tr>
+                            <td>
+                                <button type="button" class="btn-lg numberButton"></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn-lg numberButton"></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn-lg numberButton"></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn-lg operatorButton">+</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn-lg numberButton"></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn-lg numberButton"></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn-lg numberButton"></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn-lg operatorButton">-</button>
+                            </td>
+                        </tr>
+                            <td>
+                                <button type="button" class="btn-lg numberButton"></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn-lg numberButton"></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn-lg numberButton"></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn-lg operatorButton">*</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn-lg" id="clearButton">C</button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn-lg numberButton"></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn-lg" id="equalButton">=</button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn-lg operatorButton">/</button>
+                            </td>
+                        </tr>            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</article>
     <script src="calculator.js"></script>
 </body>
 </html>
