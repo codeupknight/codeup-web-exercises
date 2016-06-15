@@ -11,7 +11,11 @@
     position: absolute;
     top: 0;  
     z-index: -1;  
-}
+	}
+    #sprite {
+    	height: 100px;
+        position: absolute; top: 350px; left:150px;
+    }
 	</style>
 </head>
 <body>
@@ -29,6 +33,11 @@
         </div>
       </div>
     </nav>
+
+<img id="sprite" src="photos/contra/contra_walk.png">
+
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<div id="map">
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA1QuQ85hJAfDu6SPaSMSkLbtAUtE2w78">
 		</script>
@@ -139,7 +148,47 @@
 				};
 				nycButton.addEventListener('click', nycListener, false);
 				satxButton.addEventListener('click', satxListener, false);
-			    })();
+		//contra
+        var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+        var entered = 0
+        var victory = ['photos/contra/contra_turn.png', 'photos/contra/contra_turnRun1.png', 'photos/contra/contra_turnRun2.png','photos/contra/contra_turnRun1.png', 'photos/contra/contra_turnRun2.png','photos/contra/contra_upRight.png', 'photos/contra/contra_upLeft.png','photos/contra/contra_upRight.png', 'photos/contra/contra_upLeft.png','photos/contra/contra_turnFall.png', 'photos/contra/contra_fall1.png', 'photos/contra/contra_fall2.png', 'photos/contra/contra_fall3.png']
+        var sprite = document.getElementById('sprite');
+        var delay = 1000;
+
+        $(document).keydown(function(event){
+            if (event.keyCode === 39) {
+                $('#sprite').css({'position': 'absolute', 'left':'+=50px'});
+            } 
+            if (event.keyCode === 37) {
+                $('#sprite').css({'position': 'absolute', 'left':'-=50px'});
+            }
+            if (event.keyCode === 40) {
+                $('#sprite').css({'position': 'absolute', 'top':'+=50px'});
+            } 
+            if (event.keyCode === 38) {
+                $('#sprite').css({'position': 'absolute', 'top':'-=50px'});
+            }
+            if (event.keyCode === konamiCode[entered]) {
+                console.log("boom" + entered);
+                entered++
+            } else {
+                entered = 0;
+            }
+
+            if (entered === konamiCode.length) {
+                    var i = 0;
+                    var id = setInterval(function() {
+                        if (i < victory.length) {
+                          sprite.setAttribute('src', victory[i]);
+                        } else {
+                            clearInterval(id);
+                        }
+                        i++;
+                    }, 500);
+                entered = 0;
+            }
+        });
+        	})();
 		</script>
 	</div>
 

@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>jQuery FAQ</title>
+        <style>
+        .invisible{
+            display: none;
+        }
+        </style>
+    </head>
+    <body>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script>
+            "use strict";
+            $("dd").addClass( "invisible" );
+        
+            $('#reveal-important').click(function(event) {
+                event.preventDefault();
+                $('dd').toggleClass('invisible');
+                //console.log("Work dammit")
+            });
+        </script>
+    <h1>National Parks</h1>
+        <dl>
+            <dt>Can I bring a gun to Yellowstone National Park?</dt>
+            <dd>Yes, guns are permitted in Yellowstone National Park.</dd>
+            <dt>Can I shoot my gun?</dt>
+            <dd>No. This isn't Texas</dd>
+            <dt>If I can't shoot my gun, why are they allowed?</dt>
+            <dd>For hunting purposes and travel outside the park, between small towns. Check state gun laws, as leaving the park can put you in one of three states.</dd>
+            <dt>Can I bring my pet to Yellowstone National Park?</dt>
+            <dd>Yes, if you want to only see the inside of your tent and the surrounding 100 feet of roads and the front area of the park. It's best to either leave them at home or in a kennel. Or find a different park to visit.</dd>
+            <dt>Do cell phones work in Yellowstone National Park?</dt>
+            <dd>Yes, but did you really come here just to be on your cell phone?</dd>
+            <dt>Can I pet the animals?</dt>
+            <dd>Yes but it's up to your family to arrange your closed-casket funeral.</dd>
+            <dt>Can I feed the animals?</dt>
+            <dd>See above answer.</dd>
+            <dt>How much does Yellowstone cost?</dt>
+            <dd>Probably enough to pay for your closed casket funeral but we still won't.</dd>
+            <dt>Can I drink alcohol in a state park?</dt>
+            <dd>Not in Texas. Too many drunken cactus adventures.</dd>
+            <dt>How can I avoid heat stress?</dt>
+            <dd>Air conditioning.</dd>
+        </dl>
+    <h1>Parks List</h1>
+    <h3>National Parks</h3>
+    <ul id="national-parks">
+        <li>Arches</li>
+        <li>Badlands</li>
+        <li>Carlsbad Caverns</li>
+        <li>Denali</li>
+        <li>Everglades</li>
+    </ul>
+    <h3>State Parks of Texas</h3>
+    <ul id="state-parks-texas">
+        <li>Abilene</li>
+        <li>Big Bend</li>
+        <li>Choke Canyon</li>
+        <li>Davis Mountains</li>
+        <li>Enchanted Rock</li>
+    </ul>
+</body>
+</html>
+        
+         <a href="#" id="reveal-important">Click to toggle the answers.</a>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script>
+            "use strict";
+            $("dd").addClass( "invisible" );
+        
+            $('#reveal-important').click(function(event) {
+                event.preventDefault();
+                $('dd').toggleClass('invisible');
+            });
+
+            $('ul').each(function(index, element) {
+                $(element).children().first().css('font-weight', 'bold');
+            });
+        </script>
+    </body>
+</html>
