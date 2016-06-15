@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>jquery</title>
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<div>
+<h1 id="header">Header 1</h1>
+<p class="paragraph">Paragraph 1</p>
+<ul><li>List Item</li><li>List Item</li></ul>
+<p class="paragraph">Paragraph 2 </p>
+<ul><li>List Item</li><li>List Item</li></ul>
+<p class="paragraph">Paragraph 3</p>
+<ul><li>List Item</li><li>List Item</li></ul>
+</div>
+
+<script>
+	
+	$(document).ready(function() {
+		$('li').css('font-weight', '20px')
+	});
+
+	var headerText = $('#header').text();
+	var parText = $('.paragraph');
+    $(document).ready(function() {
+    parText.css('color', '#FF0');
+    });
+	</script>
+</body>
+</html>

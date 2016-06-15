@@ -1,35 +1,147 @@
 <html>
 <head>
 	<title>google maps test</title>
-	<style>
+    <link rel="stylesheet" type="text/css" href="cosmo-custom.css">
+    <link rel="stylesheet" type="text/css" href="cosmo.css">
+	<style type="text/css">
 	#map {
-		height:500px;
-	}
+    height: 100%;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;  
+    z-index: -1;  
+}
 	</style>
 </head>
 <body>
-<div id="map"></div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA1QuQ85hJAfDu6SPaSMSkLbtAUtE2w78">
-</script>
-<script type="text/javascript">
-    (function() {
-        "use strict";
+	<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <img class="sm-logo" src="photos/lh-logo.png">
+          <a class="navbar-brand" href="#">Mapius, Destroyer of Worlds</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a id="satx" class="btn">San Antonio</a></li>
+            <li><a id ="nyc" class="btn">NYC</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	<div id="map">
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA1QuQ85hJAfDu6SPaSMSkLbtAUtE2w78">
+		</script>
+		<script type="text/javascript">
+		    (function() {
+		        "use strict";
 
-        // Set our map options
-        var mapOptions = {
-            // Set the zoom level
-            zoom: 19,
+		        // Set our map options
+		        var mapOptions = {
+		            // Set the zoom level
+		            zoom: 11,
 
-            // This sets the center of the map at our location
-            center: {
-                lat:  29.426791,
-                lng: -98.489602
-            }
-        };
+		            // This sets the center of the map at our location
+		            center: {
+		                lat:  29.426791,
+		                lng: -98.489602
+		            },
+					  zoomControl: false,
+					  mapTypeControl: false,
+					  scaleControl: false,
+					  streetViewControl: false,
+					  rotateControl: false,
+					  fullscreenControl: false
+		        };
+		        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+		        map.setOptions({
+		        	styles: [
+							  {
+							    "elementType": "labels",
+							    "stylers": [
+							      { "visibility": "off" }
+							    ]
+							  },{
+							    "elementType": "geometry.stroke",
+							    "stylers": [
+							      { "visibility": "off" }
+							    ]
+							  },{
+							    "featureType": "poi",
+							    "stylers": [
+							      { "visibility": "on" },
+							      { "color": "#FFC40D" }
+							    ]
+							  },{
+							    "featureType": "administrative",
+							    "stylers": [
+							      { "visibility": "off" }
+							    ]
+							  },{
+							    "featureType": "landscape.natural.terrain",
+							    "stylers": [
+							      { "visibility": "on" },
+							      { "color": "#E89C0C" }
+							    ]
+							  },{
+							    "featureType": "water",
+							    "stylers": [
+							      { "visibility": "on" },
+							      { "color": "#FF8A00" }
+							    ]
+							  },{
+							    "featureType": "road",
+							    "stylers": [
+							      { "color": "#eceaea" }
+							    ]
+							  },{
+							    "featureType": "poi",
+							    "stylers": [
+							      { "color": "#1d2020" },
+							      { "visibility": "off" }
+							    ]
+							  },{
+							    "featureType": "landscape",
+							    "stylers": [
+							      { "color": "#2c2d2c" }
+							    ]
+							  }
+							  
+							]});
+	            var codeup = {
+	                lat:  29.426791,
+	                lng: -98.489602
+		            };
+		        var codeupImage = '/photos/codeup-arrow.png';
+       			var codeupMarker = new google.maps.Marker({
+				    position: codeup,
+				    map: map,
+				    icon: codeupImage
+					})	
 
-        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-    })();
-    </script>
+				var satxButton = document.getElementById('satx');
+				var nycButton = document.getElementById('nyc');
+
+				function nycListener() {
+					map.setCenter({
+				        lat:  40.7960891,
+				        lng: -73.9570694
+				    }),
+				    map.setZoom(12);
+				}				
+				
+				function satxListener() {
+					map.setCenter({
+				        lat:  29.426791,
+				        lng: -98.489602
+				    },
+				    map.setZoom(11));
+				};
+				nycButton.addEventListener('click', nycListener, false);
+				satxButton.addEventListener('click', satxListener, false);
+			    })();
+		</script>
+	</div>
 
 </body>
 </html>
