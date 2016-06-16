@@ -75,7 +75,14 @@
 
             $('ul').each(function(index, element) {
                 $(element).children().first().css('font-weight', 'bold');
+                $('li').click(function(event) {
+                    $(this).parent().addClass('invisible');
+                });
+                $('ul').click(function(event) {
+                    $(this).removeClass('invisible');
+                });
             });
+
         </script>
     </body>
 </html>

@@ -19,6 +19,7 @@
 	</style>
 </head>
 <body>
+<!--header-->
 	<nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -33,11 +34,11 @@
         </div>
       </div>
     </nav>
-
+<!--sprite-->
 <img id="sprite" src="photos/contra/contra_walk.png">
 
-
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- google map background -->
 	<div id="map">
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA1QuQ85hJAfDu6SPaSMSkLbtAUtE2w78">
 		</script>
@@ -148,14 +149,25 @@
 				};
 				nycButton.addEventListener('click', nycListener, false);
 				satxButton.addEventListener('click', satxListener, false);
-		//contra
+// sprite animation
         var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
         var entered = 0
         var victory = ['photos/contra/contra_turn.png', 'photos/contra/contra_turnRun1.png', 'photos/contra/contra_turnRun2.png','photos/contra/contra_turnRun1.png', 'photos/contra/contra_turnRun2.png','photos/contra/contra_upRight.png', 'photos/contra/contra_upLeft.png','photos/contra/contra_upRight.png', 'photos/contra/contra_upLeft.png','photos/contra/contra_turnFall.png', 'photos/contra/contra_fall1.png', 'photos/contra/contra_fall2.png', 'photos/contra/contra_fall3.png']
         var sprite = document.getElementById('sprite');
-        var delay = 1000;
+        var run = ['photos/contra/contra_run1.png',"photos/contra/contra_walk.png"]
 
         $(document).keydown(function(event){
+            if (event.keyCode === 37 || event.keyCode === 38 || event.keyCode === 39|| event.keyCode === 40) {
+            var i = 0;
+            var id = setInterval(function() {
+                if (i < run.length) {
+                  sprite.setAttribute('src', run[i]);
+                } else {
+                    clearInterval(id);
+                }
+                i++;
+            }, 50);
+            }
             if (event.keyCode === 39) {
                 $('#sprite').css({'position': 'absolute', 'left':'+=50px'});
             } 
@@ -184,7 +196,7 @@
                             clearInterval(id);
                         }
                         i++;
-                    }, 500);
+                    }, 400);
                 entered = 0;
             }
         });

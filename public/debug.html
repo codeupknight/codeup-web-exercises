@@ -2,32 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Programming books books</title>
+    <title>Books</title>
 </head>
 <body>
-    <h1>See your friend's books</h1>
-    <form>
-        <label for="friend">Choose</label>
-        <select id="friend" name="friend">
-            <option value="">Friend</option>
-        </select>
-        <input type="button" value="Search">
-    </form>
-    <div id="books"></div>
-    <script>
-        var friends = [
-            {name: 'Oliver Queen', books: ['Arrow', 'The Green Arrow (Comic)']},
-            {name: 'Barry Allen', books: ['Working effectively with unit tests', '50 quick ideas for your tests']},
-            {name: 'Jessica Jones', books: ['Understanding the 4 rules of simple design', 'Principles of package design']},
-            {name: 'Clark Kent', books: ['Selling test driven projects']}
-        ];
-        var friendSelect = document.getElementById('friend');
-        var friendName;
-        friends.forEach(function (friend, i) {
-            friendName += '<option value="' + i + '">' + friend.name + '</option>';
-        });
-        friendSelect.innerHTML += friendName;
+<table>
+    <thead>
+        <tr>
+            <th>
+                <a id="sort" class="header" href="#">Friend</a>
+            </th>
+            <td class="header">Books</td>
+        </tr>
+    </thead>
+    <tbody id="friends">
+    </tbody>
+</table>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    (function() {
 
-    </script>
+
+    var tbody = $('#friends');
+    var sortName = $('#sort');
+    var friends = [
+        {name: 'Oliver', books: ['Ansible for DevOps', 'Servers for hackers']},
+        {name: 'Barry', books: ['Working effectively with unit tests', '50 quick ideas for your tests']},
+        {name: 'Jessica', books: ['Understanding the 4 rules of simple design', 'Principles of package design']},
+        {name: 'Clark', books: ['Selling test driven projects']}
+    ];
+    var buildTableRows = function (friends) {
+        var table = '';
+        friends.forEach(function (friend)  {
+            table += '<tr><td>' + friend.name + '</td><td>' + friend.books.join(', ') + '</td></tr>';
+        });
+        return table;
+    }
+    var sortFriendsByName = function(friends) {
+        friends.sort(function (friendA, friendB) {
+            if (friendA.name < friendB.name) {
+                return -1;
+            }
+            if (friendA.name > friendB.name) {
+                return 1;
+            }
+            return 0;
+        });
+    };
+    var sortTable = function (event) {
+        event.preventDefault();
+        sortFriendsByName(friends);
+        tbody.html(buildTableRows(friends));
+    }
+    tbody.html(buildTableRows(friends));
+    sortName.on('click', sortTable);
+
+
+    })();
+</script>
 </body>
 </html>

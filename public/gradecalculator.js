@@ -1,5 +1,8 @@
 'use strict';
 
+var classNameInput = $("#subject");
+var classGradeInput = $("#grade");
+
 var student = {
     awesomeGrade: 80,
     studentName: null,
@@ -27,58 +30,56 @@ var student = {
 
 //***This section should be good
 //name-save function with variables included
-    function nameSavedListener() {
-        var addButton = document.getElementById("add-grade");
-        var averageButton = document.getElementById("calculate-average");
-        averageButton.removeAttribute("disabled");
-        addButton.removeAttribute("disabled");
-        var nameInputValue = document.getElementById("nameInput").value;
-        var nameOutput = document.getElementById("student-name");
-        nameOutput.innerText = nameInputValue;
-        student.studentName = nameInputValue;
-    }
+function nameSavedListener() {
+    var addButton = $("#add-grade");
+    var averageButton = $("#calculate-average");
+    averageButton.removeAttr("disabled");
+    addButton.removeAttr("disabled");
+    var nameInputValue = $("#nameInput");
+    var nameOutput = $("#student-name");
+    nameOutput.text = nameInputValue.val();
+    student.studentName = nameInputValue.val();
+}
 //***
 
 //***This section should be good
 //class entry listener function and its variables
-    function subjectBtnListener() {
-        var classNameInput = document.getElementById("subject");
-        var classGradeInput = document.getElementById("grade");
-    //activate object function
-        student.addSubject(classNameInput.value, classGradeInput.value);
-    //add to table
-        var tableOutput = document.getElementById("grades");
-        var classOutput = ("<tr><td>" + classNameInput.value + "</td><td>" + classGradeInput.value + "</td></tr>");
-        tableOutput.innerHTML = (classOutput + tableOutput.innerHTML);
+function subjectBtnListener() {
+    if (classNameInput.val() !== "" && classGradeInput.val() !== "") {
+//activate object function
+    student.addSubject(classNameInput.val(), classGradeInput.val());
+//add to table
+    var tableOutput = $("#grades");
+    var classOutput = ("<tr><td>" + classNameInput.val() + "</td><td>" + classGradeInput.val() + "</td></tr>");
+    tableOutput.html(classOutput + tableOutput.html());
     }
+    classNameInput.val("");
+    classGradeInput.val("");
+}
 //***
 
-//
-    function calculateAverageListener() {
-        subjectBtnListener();
-        student.calculateAverage();
-        if (student.isAwesome()) {
-            document.getElementById('student-awesome').removeAttribute('class');
-            document.getElementById('student-practice').setAttribute('class', 'hidden');
-        } else {
-        document.getElementById('student-practice').removeAttribute('class');
-        document.getElementById('student-awesome').setAttribute('class', 'hidden');
-        }
+//looks good
+//finishes the stuffs
+function calculateAverageListener() {
+    subjectBtnListener();
+    student.calculateAverage();
+    if (student.isAwesome()) {
+        $('#student-awesome').removeAttr('class');
+        $('#student-practice').attr('class', 'hidden');
+    } else {
+    $('#student-practice').removeAttr('class');
+    $('#student-awesome').attr('class', 'hidden');
     }
+    classNameInput.val("");
+    classGradeInput.val("");
+}
+
+
 //***This section should be good
 //all button listeners
-    var nameBtn = document.getElementById('save-name');
-    nameBtn.addEventListener('click', nameSavedListener, false);
+$('#save-name').click(nameSavedListener);
 
-    var subjectBtn = document.getElementById('add-grade');
-    subjectBtn.addEventListener('click', subjectBtnListener, false);
+$('#add-grade').click(subjectBtnListener);
 
-    var gradeBtn = document.getElementById('calculate-average');
-    gradeBtn.addEventListener('click', calculateAverageListener, false);
-//***   
-
-//Instructions:
-// After the student inputs the subject,
-// the grade, and clicks Add and continue, 
-// the subject name and the grade should be added to the table as a new row
-// and to the student object using the method addSubject.
+$('calculate-average').click(calculateAverageListener);
+//***  
