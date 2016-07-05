@@ -1,0 +1,423 @@
+<html>
+<head>
+	<title>google maps test</title>
+    <link rel="stylesheet" type="text/css" href="portfolio.css">
+    <link rel="stylesheet" type="text/css" href="cosmo.css">
+	<style type="text/css">
+	#map {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;  
+    z-index: 0;  
+	}
+    #sprite {
+    	height: 100px;
+        position: absolute; top: 50%; left:15%;
+        display: none;
+        z-index: 1;
+    }
+    .invisible {
+    	display: none;
+    }
+    .invisible-noremove {
+    	display: none;
+    }
+    #hero {
+    	height:200px;
+    	position: absolute; top: 50%; left:85%;
+    	z-index: 1;
+    }
+    .weather {
+    	position: absolute; top: 15%; left: 85%;
+    	z-index: 1;
+    	color: white;
+    	text-align: center;
+    }
+    .simon {
+		margin-top:20px;
+		width: 75px;
+		padding-left:50px;
+		display:none;
+	}
+	.flare {
+		position: absolute;
+		margin-top:30px;
+		width: 180px;
+		z-index: 1;
+		display: none;
+	}
+	.laser {
+		position: absolute;
+		margin-top:30px;
+		width: 150px;
+		z-index: 1;
+		display: none;
+	}
+	.head {
+		margin-top:20px;
+		color:white;
+		text-align: center;
+		display:none;
+	}
+	.head:hover {
+		color:gray;
+	}
+	</style>
+</head>
+<body>
+<!--header-->
+	<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <!-- <img class="sm-logo" src="img/hero_white.png"> -->
+          <a class="navbar-brand" href="#">K. E. Knight</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a id="satx" class="btn">San Antonio</a></li>
+            <li><a id ="nyc" class="btn">NYC</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<img id="sprite" class = "invisible" src="img/contra/contra_walk.png">
+<img id="hero" src="img/hero_white.png">
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<!-- google map background -->
+<div>
+	<div class = "weather invisible">
+		Weather
+		<div id ="weatherTable"></div>
+		<p id = "fishing"></p>
+</table>
+</div>
+<div id="map">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA1QuQ85hJAfDu6SPaSMSkLbtAUtE2w78">
+</script>
+<script type="text/javascript">
+(function() {
+    "use strict";
+     function simpleSimon() {
+			var sequence = [];
+			var userInput = [];
+			var userProgress = 0;
+			var simon = $(".simon");
+			var laser = $(".laser");
+			var counter = 0;
+			var inputCounter = 0;
+			var blockInput = true;
+			var roundDisplay = $('.roundDisplay').text;
+
+			simon.fadeToggle(500);
+			$('.head').fadeToggle(500);
+
+			for (var i=0;i<simon.length;i++) {
+				simon.eq(i).attr('data-value', i);
+				simon.eq(i).click(simonClick);
+			}
+			for (i=0;i<simon.length;i++) {
+				laser.eq(i).attr('data-invisValue', i);
+			}
+
+			// pop sequence array
+			function randomNumber () {
+				return Math.floor(Math.random() * ($(".simon").length));
+			};
+
+			//simon round
+			function simonRound () {
+				sequence.push(randomNumber());
+				inputCounter = 0;
+				flareSequence();
+			}
+			//show flares according to sequence array, sets flaring variable to restrict clicks
+			function flareSequence() {
+				blockInput = true;
+				var y = 0;
+				id = setInterval(function () {
+					if (y < sequence.length) {
+						$('.flare').eq(sequence[y]).fadeToggle(300);
+						$('.flare').eq(sequence[y]).fadeToggle(500);
+						y++
+						console.log("flashing " + y + " : " + sequence[y-1]);
+					} else {
+						clearInterval(id);
+						blockInput = false;
+					};
+				}, 1000);
+			}
+
+			//logs user input and sends out laser image when clicked.
+			//restarts if array length is reached. clears and restarts if failed.
+			function simonClick(event) {
+				if (blockInput) {
+					//guard
+					return;
+				}
+				var value = $(this).attr('data-value')
+				value = Number(value);
+				console.log(value);
+				$('.laser').eq(value).fadeToggle(10);
+				$('.laser').eq(value).animate({
+					marginLeft: "100%"
+				}, 700);
+				$('.laser').eq(value).fadeToggle(1);
+				$('.laser').eq(value).css('marginLeft', 0);
+				userInput.push(value);
+				if (value == sequence[inputCounter]) {
+			        inputCounter++;
+			        console.log("winning!");
+			        console.log("inputCounter: " + inputCounter + ", sequence length: " + sequence.length + ", last one in the array: " + sequence[sequence.length - 1]);
+			    }
+			    if (value != sequence[inputCounter-1]) {
+			    	console.log("failure. starting new round");
+			    	sequence = [];
+			    	simonRound()
+			    }
+			    if (inputCounter === sequence.length) {
+			        	console.log("winning! starting a new round!")
+			        	simonRound();
+
+			    } 
+			};
+			function simonStart() {
+				sequence = [];
+				simonRound()
+			}
+
+			$('#title').click(simonStart);
+		};
+    // Set our map options
+    var mapOptions = {
+        // Set the zoom level
+        zoom: 11,
+
+        // This sets the center of the map at our location
+        center: {
+            lat:  29.426791,
+            lng: -98.489602
+        },
+        disableDefaultUI: true,
+		zoomControl: false,
+		scaleControl: false,
+		scrollwheel: false,
+		disableDoubleClickZoom: true,
+		draggable: false
+    };
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    map.setOptions({
+    	styles: [
+				  {
+				    "elementType": "labels",
+				    "stylers": [
+				      { "visibility": "off" }
+				    ]
+				  },{
+				    "elementType": "geometry.stroke",
+				    "stylers": [
+				      { "visibility": "off" }
+				    ]
+				  },{
+				    "featureType": "poi",
+				    "stylers": [
+				      { "visibility": "on" },
+				      { "color": "#FFC40D" }
+				    ]
+				  },{
+				    "featureType": "administrative",
+				    "stylers": [
+				      { "visibility": "off" }
+				    ]
+				  },{
+				    "featureType": "landscape.natural.terrain",
+				    "stylers": [
+				      { "visibility": "on" },
+				      { "color": "#E89C0C" }
+				    ]
+				  },{
+				    "featureType": "water",
+				    "stylers": [
+				      { "visibility": "on" },
+				      { "color": "#FF8A00" }
+				    ]
+				  },{
+				    "featureType": "road",
+				    "stylers": [
+				      { "color": "#eceaea" }
+				    ]
+				  },{
+				    "featureType": "poi",
+				    "stylers": [
+				      { "color": "#1d2020" },
+				      { "visibility": "off" }
+				    ]
+				  },{
+				    "featureType": "landscape",
+				    "stylers": [
+				      { "color": "#2c2d2c" }
+				    ]
+				  }
+				  
+				]});
+
+	//markers
+    var codeup = {
+        lat:  29.426791,
+        lng: -98.489602
+    };
+    var utsa = {
+    	lat: 29.5845619,
+    	lng: -98.6190524
+    };
+    var crossroads = {
+    	lat: 29.4929116,
+    	lng: -98.5511068
+    };
+
+    var codeupImage = {
+			url: 'img/codeup-arrow.png',
+			scaledSize: new google.maps.Size(50, 50)
+		};
+		var codeupMarker = new google.maps.Marker({
+	    position: codeup,
+	    map: map,
+	    icon: codeupImage
+	});
+		//
+
+		var fisherman = {
+			url: 'img/fisherman-sprite.png',
+			scaledSize: new google.maps.Size(50, 50),
+		};
+		var fishermanMarker = new google.maps.Marker({
+	    position: crossroads,
+	    map: map,
+	    icon: fisherman,
+	    draggable: true
+	});	
+	var fishermanPosition = {}
+	var id = 0;
+
+		fishermanMarker.addListener('dragend', function(event) {
+    	fishermanPosition = event.latLng;
+    	$('.weather').removeClass('invisible');
+
+		$.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+	    	APPID: "8c952f963d5c9f5a24eff528c9535c87",
+			lat:  fishermanPosition.lat(),
+			lon: fishermanPosition.lng(),
+	    	units: "imperial",
+	    	cnt: 1
+			}).done(function (data) {
+	    			if (fishermanPosition.lat() > 29.2425081 && fishermanPosition.lat() < 29.2699337 && fishermanPosition.lng() < -98.358946 && fishermanPosition.lng() > -98.3935373) {
+	    				clearInterval(id);
+	    				id = setInterval(function() {
+	    				$('#fishing').html("Perfect fishing weather!").fadeToggle(1000)
+	    				}, 1000);
+	    				$('#sprite').removeClass('invisible');
+	    			} else {
+	    				clearInterval(id);
+	    				id = setInterval(function() {
+	    					$('#fishing').html("The fish aren't biting.").fadeToggle(1000)
+	    				}, 1000);
+	    			}
+	    		data.list.forEach(function(list) {
+		    		$('#weatherTable').html('<img src="http://openweathermap.org/img/w/' + list.weather[0].icon + '.png"><br>' + list.temp.max + "° | " + list.temp.min + "°<br>" +  list.weather[0].main + ": " + list.weather[0].description);
+		    		});
+	    		});
+	
+	});
+		//end markers
+		//listeners
+	var satxButton = document.getElementById('satx');
+	var nycButton = document.getElementById('nyc');
+	function nycListener() {
+		map.setCenter({
+	        lat:  40.7960891,
+	        lng: -73.9570694
+	    }),
+	    map.setZoom(12);
+	}				
+	function satxListener() {
+		map.setCenter({
+	        lat:  29.426791,
+	        lng: -98.489602
+	    },
+	    map.setZoom(11));
+	};
+	nycButton.addEventListener('click', nycListener, false);
+	satxButton.addEventListener('click', satxListener, false);
+
+
+
+// konami animation
+    var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    var entered = 0
+    var victory = ['img/contra/contra_turn.png', 'img/contra/contra_turnRun1.png', 'img/contra/contra_turnRun2.png','img/contra/contra_turnRun1.png', 'img/contra/contra_turnRun2.png','img/contra/contra_upRight.png', 'img/contra/contra_upLeft.png','img/contra/contra_upRight.png', 'img/contra/contra_upLeft.png','img/contra/contra_run1.png','img/contra/contra_flip2.png', 'img/contra/contra_flip.png','img/contra/contra_fall1.png','img/contra/contra_fall2.png','img/contra/contra_run2.png', "img/contra/contra_walk.png"]
+    var run = ['img/contra/contra_run1.png',"img/contra/contra_walk.png"]
+
+    $(document).keydown(function(event){
+        if (event.keyCode === 37 || event.keyCode === 38 || event.keyCode === 39 || event.keyCode === 40 && ($('#sprite').hasClass('invisible')) != true) {
+           	$('#sprite').slideDown(3000);
+            var i = 0;
+            var id = setInterval(function() {
+                if (i < run.length) {
+                  sprite.setAttribute('src', run[i]);
+                } else {
+                    clearInterval(id);
+                }
+                i++;
+            }, 50);
+        }
+        if (event.keyCode === 39) {
+            $('#sprite').css({'position': 'absolute', 'left':'+=50px'});
+        } 
+        if (event.keyCode === 37) {
+            $('#sprite').css({'position': 'absolute', 'left':'-=50px'});
+        }
+        if (event.keyCode === 40) {
+            $('#sprite').css({'position': 'absolute', 'top':'+=50px'});
+        } 
+        if (event.keyCode === 38) {
+            $('#sprite').css({'position': 'absolute', 'top':'-=50px'});
+        }
+        if (event.keyCode === konamiCode[entered]) {
+            console.log("boom" + entered);
+            entered++
+        } else {
+            entered = 0;
+        }
+
+            if (entered === konamiCode.length && ($('#sprite').hasClass('invisible')) != true) {
+            	$('.weather').html('');
+                var i = 0;
+                var id = setInterval(function() {
+                    if (i < victory.length) {
+                      sprite.setAttribute('src', victory[i]);
+                    } else {
+                        clearInterval(id);
+                    }
+                    i++;
+                }, 400);
+                $('sprite').addClass('invisible-noremove');
+                entered = 0;
+                simpleSimon();
+            }
+        });
+
+
+		//end konami code
+    })();
+
+
+//make head and simon classes visible
+//move simon classes side to side
+   
+	</script>
+</div>
+
+</body>
+</html>
