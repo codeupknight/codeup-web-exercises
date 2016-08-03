@@ -1,0 +1,99 @@
+Flexbox with Anton
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes
+
+Layouts w/ box model is "the wrong way"
+
+Flexbox- The CSS3 Flexible Box, or flexbox, is a layout mode providing for the arrangement of elements on a page such that the elements behave predictably when the page layout must accommodate different screen sizes and different display devices. 
+
+For many applications, the flexible box model provides an improvement over the block model in that it >does not use floats<, nor do the flex container's margins collapse with the margins of its contents.
+
+---When Should I use Flexbox?---
+
+Do NOT use flexbox for overall page layouts.
+--Instead, use grid layout from bootstrap, etc.
+
+Do NOT use flexbox on every container.
+--Think about what you're trying to achieve. A paragraph in a container can scale well.
+--Use flexbox on multi-column or multi-row containers.
+
+Do NOT use flexbox on IE8 or IE9.
+--Just don't use IE8 or IE9.
+
+Use flexbox to scale container children to match height of container.
+
+Use flexbox to vertically align elements in containers.
+--It can also help with horizontal alignments, but that's nbd.
+
+Use flexbox to order elements in containers.
+
+---Flexbox Basics---
+Axes determine properties.
+
+Flexboxes place horizontally until they wrap.
+
+For columns, the main axis is Y, and the cross-axis is X.
+The opposite is true for rows.
+
+Flexbox children are all aware of eachother! If you dictate something on one child, the others will respond accordingly.
+
+---Flexbox Properties---
+
+Container flex properties:
+
+display: flex
+--gives ability to display children. 
+--After activating flexbox, children will immediately begin behaving accordingly, even if no other flex- properties are used.
+
+flex-direction:row/reverse, column/reverse
+--Default flex-direction is row.
+--reverse fills RtL
+
+flex-wrap: wrap, wrap-reverse
+---wrap with children, or stay in a line.
+---wrap-reverse will fill the bottom line first
+
+
+(axis)justify-content: flex-start, flex-end, center, space-between, space-around
+--default is flex-start (top-left)
+--this shit is magic.
+
+
+(axis)align-items: stretch, flex-start, flex-end, center, baseline
+--default is stretch (top-to-bottom)
+--start aligns at top, end at bottom
+--baseline aligns at bottom-line for font, regardless of font-size
+
+flex-wrap: wrap
+--allows items to wrap and maintain their set width properties
+--behaves differently when using columns vs. rows
+
+--Container Item flex properties--
+
+order: n
+--identify an item by number, and alter its order
+--set to change when resizing viewport, to avoid need for floating items
+
+flex-grow: n (1-10?)
+--specifies what amount of space inside the flex container the item should take up.
+--proportions are determined by container, then placing priority on an item so that it can grow 'n' times larger
+
+flex-shrink: n
+--specifies the flex shrink factor of a flex item.
+
+flex-basis: n[px]
+--When addressing a child, sets initial size. Determines the size of the content-box unless specified otherwise using box-sizing.
+
+flex: (flex-grow) (shrink) (basis)[px]
+
+align-self: flex-start, flex-end, center, stretch
+--allows you to have freedom of modifying selected child independently of other children
+
+
+---Notes---
+
+
+
+--Changing from row to colum inverts the X and Y axes.
+
+--

@@ -1,0 +1,19 @@
+<?php
+$adjectives = ['abashed', 'aberrant', 'abhorrent', 'abiding', 'abject', 'abrasive', 'acrid', 'barbarous', 'invisible', 'patriotic', 'decapitated', 'brash', 'capricious', 'dapper', 'didactic', 'caffinated', 'divergent', 'erratic', 'exultant', 'fallacious', 'frustrated', 'heady', 'misinformed', 'incandescent', 'irate', 'salty', 'rowdy', 'macabre', 'nebulous', 'nondescript', 'ossified', 'parsimonious', 'penitent', 'placid', 'quixotic', 'recondite', 'sordid', 'squalid', 'succinct', 'tacit', 'torpid', 'ubiquitous', 'ubiquitous', 'verdant', 'vivacious', 'voracious', 'waggish', 'wistful', 'quirky', 'dank'];
+$nouns = ['headgear', 'bracers', 'leggings', 'boots', 'shoes', 'belt', 'nunchucks', 'bag', 'shirt', 'canine', 'patriot', 'eye', 'head', 'glasses', 'goggles', 'road', 'runway', 'astronaut', 'lamp', 'table', 'chair', 'seat', 'cup', 'glass', 'window', 'building', 'tower', 'stronghold', 'edifice', 'vehicle', 'elephant', 'mouse', 'fruit', 'banana', 'barb', 'imbecile', 'genius', 'barbarian', 'projector', 'beauty', 'hulk', 'pikachu', 'growlithe', 'scythe', 'articuno', 'maw', 'rug', 'roof', 'house', 'recliner', 'thing', 'purpledrank', 'pickle', 'cucumber', 'cracker', 'truck', 'trumpet', 'guitar', 'tuba', 'girl', 'boy', 'dude', 'chick', 'beard'];
+
+$printAdjective = array_rand($adjectives, 1);
+$printNoun = array_rand($nouns, 1);
+?>
+
+<html>
+<head>
+	<title>Random Name Generator</title>
+</head>
+<body>
+
+<h1><?php echo "You have been summoned by the ancient spirit " . $printAdjective . $printNoun . "." . PHP_EOL . "How will you respond?";
+?></h1>
+
+</body>
+</html>
